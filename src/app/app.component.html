@@ -1,29 +1,6 @@
-<div>
-  <h2>{{title}}</h2>
-  <div>
-    <input [(ngModel)]="newBeerName"/>
-    <select [(ngModel)]="newBeerRating">
-      <option value="3">3</option>
-      <option value="2">2</option>
-      <option value="1">1</option>
-    </select>
-    <button (click)="addBeer()">
-      Add Beer
-    </button>
-  </div>
-  <ul>
-    <li *ngFor="let beer of beers">
-      <button (click)="selectedBeer=beer">
-      {{beer.name}} - Rating: {{beer.rating}}
-      </button>
-    </li>
-  </ul>
-  <div *ngIf="selectedBeer">
-    <input [(ngModel)]="selectedBeer.name" />
-    <select [(ngModel)]="selectedBeer.rating">
-      <option value="3">3</option>
-      <option value="2">2</option>
-      <option value="1">1</option>
-    </select>
-  </div>
-</div> 
+<h2>{{title}}</h2>
+<nav>
+  <a routerLink="/favorites" routerLinkActive="active">Favorites</a>
+  <a routerLink="/beer" routerLinkActive="active">Beers</a>
+</nav>
+<router-outlet></router-outlet>
