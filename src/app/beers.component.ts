@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Beer } from './models/beer';
 import { BeerService } from './beer.service';
+import { Beer } from './models/beer';
 
 @Component({
   selector: 'beers',
@@ -13,11 +13,9 @@ export class BeersComponent {
   beers:Beer[] = [];
   newBeerName:string;
   newBeerRating:string;
-  bs: BeerService;
 
-  constructor() {
-    this.bs = new BeerService();
-    this.beers = this.bs.getBeers();
+  constructor(private beerService: BeerService) {
+    this.beers = this.beerService.getBeers();
   }
 
   addBeer() {

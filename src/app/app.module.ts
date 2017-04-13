@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
+import { BeerService } from './beer.service';
 import { BeersComponent } from './beers.component';
 import { FavoritesComponent } from './favorites.component';
 
@@ -20,7 +21,7 @@ import { FavoritesComponent } from './favorites.component';
     HttpModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [BeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

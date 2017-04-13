@@ -1,15 +1,15 @@
+import { Injectable } from '@angular/core';
+
 import { Beer } from './models/beer';
 
+@Injectable()
 export class BeerService {
   getBeers() {
-    let beers: Beer[];
-    beers = [
+    return [
       new Beer('Miller Lite', 3, true),
       new Beer('PBR', 2, false),
       new Beer('Fall Green Hat', 2, false)
     ];
-
-    return beers;
   }
 
   getFavoriteBeers() {

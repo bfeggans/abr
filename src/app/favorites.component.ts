@@ -8,11 +8,9 @@ import { BeerService } from './beer.service';
   templateUrl: './favorites.component.html'
 })
 export class FavoritesComponent {
-  bs: BeerService;
   favorites: Beer[];
 
-  constructor() {
-    this.bs = new BeerService();
-    this.favorites = this.bs.getFavoriteBeers();
+  constructor(private beerService: BeerService) {
+    this.favorites = this.beerService.getFavoriteBeers();
   }
 }
